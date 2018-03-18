@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <h3>Products on warehouse</h3>
+        <table class="table">
+          <tr>
+            <th>Name</th><th>Price</th><th>Category</th><th>Description</th><th></th>
+           </tr>
+           <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.description}}</td>
+            <!-- <td *ngIf="product.isAvailable; else outOfStockButton">
+              <button class="btn btn-primary btn-sm" (click)="onBuyClick(product)">Buy</button>
+            </td>
+            <ng-template #outOfStockButton> 
+              <button disabled class="btn btn-secondary btn-sm">Out of stock</button>
+            </ng-template> -->
+            <!-- NOTE: ng-template works bad with bootstrap -->
+            <td *ngIf="product.isAvailable">
+              <button class="btn btn-primary btn-sm" (click)="onBuyClick(product)">Buy</button>
+            </td>
+            <td *ngIf="!product.isAvailable">
+              <button disabled class="btn btn-secondary btn-sm">Out of stock</button>
+            </td>
+           </tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h3>Products added to cart</h3>
+        <app-cart [cart]="cart"></app-cart>
+    </div>
+  </div>
+</div>
