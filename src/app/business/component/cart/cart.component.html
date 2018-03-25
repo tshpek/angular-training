@@ -1,8 +1,21 @@
 <div>
-  <p *ngIf="!cart.products.length">
+  <p *ngIf="!cart.items.length">
     The cart is empty!
   </p>
-  <p *ngFor="let product of cart.products">
-    {{product.name}}
-  </p>
+  <table *ngIf="cart.items.length" class="table">
+    <thead>
+      <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Sum</th>
+          <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr cart-item *ngFor="let item of cart.items" 
+      [cart]="cart" [item]="item" appGrayHover></tr>
+      <tr><th>Total:</th><td></td><td></td><th>{{cart.sum}}</th><td></td></tr>
+    </tbody>
+  </table>
 <div>

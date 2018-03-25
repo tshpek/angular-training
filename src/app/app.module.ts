@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BusinessModule } from './business/business.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { BusinessModule } from './business/business.module';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     BusinessModule
   ],
   providers: [],
