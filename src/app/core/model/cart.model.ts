@@ -1,5 +1,7 @@
 import { Product } from './product.model';
+import { CartItem } from './cart-item.model';
 
 export class Cart {
-  products = new Array<Product>();
+  items = new Array<CartItem>();
+  sum: number;
 }

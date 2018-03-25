@@ -1,0 +1,17 @@
+<td>
+  {{item.product.name}}
+</td>
+<td>
+  {{item.product.price}}
+</td>
+<td>
+  <button class="btn btn-sm" (click)="subtract()" [disabled]="!item.quantity">-</button>
+  {{item.quantity}}
+  <button class="btn btn-sm" (click)="add()">+</button>
+</td>
+<td>
+  {{item.quantity * item.product.price}}
+</td>
+<td>
+    <button class="btn btn-sm" (click)="remove()">X</button>
+</td>
